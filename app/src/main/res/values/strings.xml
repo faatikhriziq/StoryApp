@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Story App</string>
+    <string name="title">Welcome To Story App</string>
+    <string name="subtitle">Login To Create A Story</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="register">Register</string>
+    <string name="belum_punya_akun">Belum punya akun?</string>
+    <string name="register_subtitle">Register to create Account</string>
+    <string name="name">Name</string>
+    <string name="sudah_punya_akun">Sudah Punya Akun?</string>
+    <string name="photo_story">Photo Story</string>
+    <string name="save_bookmark">Save BookMark</string>
+</resources>
+
