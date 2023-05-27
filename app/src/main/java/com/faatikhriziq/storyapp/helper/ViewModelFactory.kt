@@ -50,9 +50,7 @@ class ViewModelFactory(
             modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
                 HomeViewModel(userPreferences, storyRepository) as T
             }
-//            modelClass.isAssignableFrom(SettingViewModel::class.java) -> {
-//                SettingViewModel(userPreferences, settingPreferences) as T
-//            }
+
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }

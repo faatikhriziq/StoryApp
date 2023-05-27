@@ -3,7 +3,6 @@ package com.faatikhriziq.storyapp.ui.auth
 import android.animation.ObjectAnimator
 import android.content.Context
 import android.os.Bundle
-import android.text.InputType
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -27,7 +26,7 @@ class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private lateinit var viewModel: LoginViewModel
     private var backPressedTime: Long = 0
-    private val BACK_PRESSED_INTERVAL = 2000
+    private val BACK_INTERVAL = 2000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,7 +59,7 @@ class LoginFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object :
             OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                if (backPressedTime + BACK_PRESSED_INTERVAL > System.currentTimeMillis()) {
+                if (backPressedTime + BACK_INTERVAL > System.currentTimeMillis()) {
                     requireActivity().finish()
                 } else {
                     Toast.makeText(

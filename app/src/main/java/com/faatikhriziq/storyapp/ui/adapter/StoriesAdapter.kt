@@ -48,23 +48,6 @@ class StoriesAdapter() :
         holder.tvStoryName.text = story.name
         holder.tvStoryDescription.text = story.description
 
-//        val ivBookmark = holder.ivBookmark
-//
-//        if (story.isBookmarked) {
-//            ivBookmark.setImageDrawable(ContextCompat.getDrawable(
-//                ivBookmark.context,
-//                R.drawable.baseline_bookmark_48)
-//            )
-//        } else {
-//            ivBookmark.setImageDrawable(ContextCompat.getDrawable(
-//                ivBookmark.context,
-//                R.drawable.baseline_bookmark_border_48)
-//            )
-//        }
-//
-//        ivBookmark.setOnClickListener {
-//            onBookmarkClick(story)
-//        }
 
         holder.bind(story)
     }

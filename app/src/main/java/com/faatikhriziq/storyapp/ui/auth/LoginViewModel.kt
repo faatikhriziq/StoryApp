@@ -28,5 +28,4 @@ class LoginViewModel(
 
     fun deleteLogin() { viewModelScope.launch { userPreferences.deleteLogin() } }
 
-    fun getThemeSetting() : LiveData<Boolean> = settingPreferences.getThemeSetting().asLiveData()
 }

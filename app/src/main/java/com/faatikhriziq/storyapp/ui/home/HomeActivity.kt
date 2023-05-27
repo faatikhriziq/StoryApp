@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
-import android.view.WindowInsetsController
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
-import androidx.core.view.WindowCompat
 import androidx.lifecycle.ViewModelProvider
 import com.faatikhriziq.storyapp.R
 import com.faatikhriziq.storyapp.databinding.ActivityHomeBinding
@@ -18,9 +15,7 @@ import com.faatikhriziq.storyapp.ui.auth.LoginActivity
 import com.faatikhriziq.storyapp.ui.create.CreateStoryActivity
 
 class HomeActivity : AppCompatActivity() {
-    companion object {
-        const val EXTRA_TOKEN = "extra_token"
-    }
+
 
     private lateinit var binding: ActivityHomeBinding
     private lateinit var viewModel: HomeViewModel

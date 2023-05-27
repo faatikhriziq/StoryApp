@@ -6,7 +6,6 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.faatikhriziq.storyapp.data.repository.StoryRepository
 import com.faatikhriziq.storyapp.data.source.local.datastore.UserPreferences
-import com.faatikhriziq.storyapp.data.source.local.entity.StoryEntity
 import com.faatikhriziq.storyapp.data.source.local.entity.UserEntity
 import kotlinx.coroutines.launch
 
@@ -21,17 +20,5 @@ class HomeViewModel(
 
     fun getAllStories(token: String) = storyRepository.getAllStories(token)
 
-    fun getBookmarkedStories() = storyRepository.getBookmarkedStories()
 
-    fun saveStory(storyEntity: StoryEntity) {
-        viewModelScope.launch {
-            storyRepository.setStoryBookmark(storyEntity, true)
-        }
-    }
-
-    fun deleteStory(story: StoryEntity) {
-        viewModelScope.launch {
-            storyRepository.setStoryBookmark(story, false)
-        }
-    }
 }

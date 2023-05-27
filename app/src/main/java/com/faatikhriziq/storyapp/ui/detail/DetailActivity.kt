@@ -1,6 +1,5 @@
 package com.faatikhriziq.storyapp.ui.detail
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,6 +13,7 @@ import com.faatikhriziq.storyapp.data.repository.Result
 import com.faatikhriziq.storyapp.helper.ViewModelFactory
 import com.faatikhriziq.storyapp.utils.DateFormatter
 
+@Suppress("DEPRECATION")
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding

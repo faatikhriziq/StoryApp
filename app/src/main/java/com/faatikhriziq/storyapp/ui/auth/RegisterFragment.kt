@@ -139,7 +139,7 @@ class RegisterFragment : Fragment() {
                             moveToLoginFragment()
                         }
 
-                        is Error -> {
+                        is Result.Error -> {
                             btnSignUp.isEnabled = true
                             Toast.makeText(
                                 context,
@@ -148,14 +148,6 @@ class RegisterFragment : Fragment() {
                             ).show()
                         }
 
-                        else -> {
-                            btnSignUp.isEnabled = true
-                            Toast.makeText(
-                                context,
-                                R.string.create_an_account_failed,
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
                     }
                 }
             }

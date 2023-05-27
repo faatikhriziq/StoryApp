@@ -33,37 +33,6 @@ import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.File
-//import android.Manifest
-//import android.content.Intent
-//import android.content.pm.PackageManager
-//import android.graphics.BitmapFactory
-//import android.net.Uri
-//import android.os.Build
-//import androidx.appcompat.app.AppCompatActivity
-//import android.os.Bundle
-//import android.view.View
-//import android.widget.Toast
-//import androidx.activity.result.contract.ActivityResultContracts
-//import androidx.appcompat.app.AlertDialog
-//import androidx.core.app.ActivityCompat
-//import androidx.core.content.ContextCompat
-//import androidx.lifecycle.ViewModelProvider
-//import com.faatikhriziq.storyapp.R
-//import com.faatikhriziq.storyapp.data.remote.request.NewStoryRequest
-//import com.faatikhriziq.storyapp.databinding.ActivityCreateStoryBinding
-//import com.faatikhriziq.storyapp.helper.ViewModelFactory
-//import com.faatikhriziq.storyapp.ui.auth.LoginActivity
-//import com.faatikhriziq.storyapp.ui.camera.CameraActivity
-//import okhttp3.MediaType.Companion.toMediaType
-//import okhttp3.MultipartBody
-//import okhttp3.RequestBody
-//import okhttp3.RequestBody.Companion.toRequestBody
-//import java.io.File
-//import com.faatikhriziq.storyapp.data.repository.Result
-//import com.faatikhriziq.storyapp.utils.reduceFileImage
-//import com.faatikhriziq.storyapp.utils.rotateFile
-//import com.faatikhriziq.storyapp.utils.uriToFile
-//import okhttp3.RequestBody.Companion.asRequestBody
 
 class CreateStoryActivity : AppCompatActivity() {
 

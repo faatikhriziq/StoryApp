@@ -1,9 +1,7 @@
 package com.faatikhriziq.storyapp.ui.auth
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.faatikhriziq.storyapp.R
 import com.faatikhriziq.storyapp.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
