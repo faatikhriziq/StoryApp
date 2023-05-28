@@ -12,6 +12,7 @@ import com.faatikhriziq.storyapp.ui.auth.LoginViewModel
 import com.faatikhriziq.storyapp.ui.create.CreateStoryViewModel
 import com.faatikhriziq.storyapp.ui.detail.DetailViewModel
 import com.faatikhriziq.storyapp.ui.home.HomeViewModel
+import com.faatikhriziq.storyapp.ui.map.MapViewModel
 
 class ViewModelFactory(
     private val userPreferences: UserPreferences,
@@ -50,7 +51,9 @@ class ViewModelFactory(
             modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
                 HomeViewModel(userPreferences, storyRepository) as T
             }
-
+            modelClass.isAssignableFrom(MapViewModel::class.java) -> {
+                MapViewModel(userPreferences, storyRepository) as T
+            }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }

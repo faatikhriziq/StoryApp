@@ -1,13 +1,13 @@
 package com.faatikhriziq.storyapp.data.source.local.room
 
 import androidx.lifecycle.LiveData
+import androidx.paging.PagingSource
 import androidx.room.*
 import com.faatikhriziq.storyapp.data.source.local.entity.StoryEntity
-
 @Dao
 interface StoryDao {
-    @Query("SELECT * FROM stories ORDER BY createdAt DESC")
-    fun getAllStories(): LiveData<List<StoryEntity>>
+    @Query("SELECT * FROM stories WHERE isBookmarked == 0 ORDER BY createdAt DESC")
+    fun getAllStories(): PagingSource<Int, StoryEntity>
 
     @Query("SELECT * FROM stories WHERE id = :id")
     fun getDetailStory(id: String): LiveData<StoryEntity>

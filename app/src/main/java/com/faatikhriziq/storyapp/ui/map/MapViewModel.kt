@@ -1,22 +1,22 @@
-package com.faatikhriziq.storyapp.ui.create
+package com.faatikhriziq.storyapp.ui.map
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.faatikhriziq.storyapp.data.remote.request.NewStoryRequest
 import com.faatikhriziq.storyapp.data.repository.StoryRepository
 import com.faatikhriziq.storyapp.data.source.local.datastore.UserPreferences
 import com.faatikhriziq.storyapp.data.source.local.entity.UserEntity
 import kotlinx.coroutines.launch
 
-class CreateStoryViewModel(
+class MapViewModel(
     private val userPreferences: UserPreferences,
     private val storyRepository: StoryRepository
-) : ViewModel() {
+): ViewModel() {
 
-    fun getLogin() : LiveData<UserEntity> = userPreferences.getLogin().asLiveData()
+    fun getLogin(): LiveData<UserEntity> = userPreferences.getLogin().asLiveData()
 
 
-    fun addNewStory(newStoryRequest: NewStoryRequest) = storyRepository.addNewStory(newStoryRequest)
+    fun getAllStoriesWithLocation(token: String) =
+        storyRepository.getAllStoriesWithLocation(token)
 }

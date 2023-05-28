@@ -14,12 +14,14 @@ import com.faatikhriziq.storyapp.databinding.FragmentHomeBinding
 import com.faatikhriziq.storyapp.ui.adapter.StoriesAdapter
 import com.faatikhriziq.storyapp.data.repository.Result
 import com.faatikhriziq.storyapp.helper.ViewModelFactory
+import com.faatikhriziq.storyapp.ui.adapter.LoadingStateAdapter
+import com.faatikhriziq.storyapp.ui.adapter.StoriesHomeAdapter
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var viewModel: HomeViewModel
-    private lateinit var storiesAdapter: StoriesAdapter
+    private lateinit var storiesHomeAdapter: StoriesHomeAdapter
     private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
@@ -50,7 +52,11 @@ class HomeFragment : Fragment() {
         binding.rvStories.apply {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
-            adapter = storiesAdapter
+            adapter = storiesHomeAdapter.withLoadStateFooter(
+                footer = LoadingStateAdapter {
+                    storiesHomeAdapter.retry()
+                }
+            )
         }
     }
 
@@ -65,27 +71,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun executeGetAllStories(token: String) {
-        viewModel.getAllStories(token).observe(viewLifecycleOwner) { result ->
-            if (result != null) {
-                when (result) {
-                    is Result.Loading -> {
-                        binding.progressBar.visibility = View.VISIBLE
-                    }
-                    is Result.Success -> {
-                        binding.progressBar.visibility = View.GONE
-                        storiesAdapter.submitList(result.data)
-                    }
-                    is Result.Error -> {
-                        Toast.makeText(
-                            context,
-                            R.string.failed_to_load_data,
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                }
-            }
+        viewModel.getAllStories(token).observe(viewLifecycleOwner) {
+            storiesHomeAdapter.submitData(lifecycle, it)
         }
     }
+
 
     private fun setupViewModel() {
         viewModel = ViewModelProvider(
@@ -96,11 +86,11 @@ class HomeFragment : Fragment() {
 
     private fun setRecyclerView() {
         val linearLayoutManager = LinearLayoutManager(requireContext())
-        storiesAdapter = StoriesAdapter()
+        storiesHomeAdapter = StoriesHomeAdapter()
 
         recyclerView = binding.rvStories
         recyclerView.apply {
-            adapter = storiesAdapter
+            adapter = storiesHomeAdapter
             layoutManager = linearLayoutManager
         }
     }

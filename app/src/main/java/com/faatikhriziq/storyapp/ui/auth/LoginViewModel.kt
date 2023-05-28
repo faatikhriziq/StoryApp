@@ -26,6 +26,5 @@ class LoginViewModel(
 
     fun getLogin() : LiveData<UserEntity> = userPreferences.getLogin().asLiveData()
 
-    fun deleteLogin() { viewModelScope.launch { userPreferences.deleteLogin() } }
 
 }

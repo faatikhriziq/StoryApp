@@ -13,6 +13,7 @@ import com.faatikhriziq.storyapp.databinding.ActivityHomeBinding
 import com.faatikhriziq.storyapp.helper.ViewModelFactory
 import com.faatikhriziq.storyapp.ui.auth.LoginActivity
 import com.faatikhriziq.storyapp.ui.create.CreateStoryActivity
+import com.faatikhriziq.storyapp.ui.map.MapActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -57,6 +58,11 @@ class HomeActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.menu_logout -> {
                 showLogoutDialog()
+                true
+            }
+
+            R.id.menu_maps -> {
+                startActivity(Intent(this, MapActivity::class.java))
                 true
             }
 
